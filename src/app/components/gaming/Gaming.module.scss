@@ -1,0 +1,160 @@
+.gaming {
+    padding: 6rem 0;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 95%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2937;
+}
+
+.platforms {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.platformIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    svg {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 0.875rem;
+    }
+
+    &:hover {
+        color: #4f46e5;
+        transform: translateY(-2px);
+    }
+}
+
+.gamesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gameCard {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        
+        .overlay {
+            opacity: 1;
+        }
+
+        .image {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gameIcon {
+    font-size: 3rem;
+    color: white;
+}
+
+.gameContent {
+    padding: 1.5rem;
+}
+
+.gameTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.gameDescription {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.platform {
+    color: #9333ea;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .platforms {
+        gap: 1.5rem;
+    }
+
+    .platformIcon {
+        svg {
+            font-size: 1.5rem;
+        }
+    }
+
+    .gamesGrid {
+        grid-template-columns: 1fr;
+    }
+} 

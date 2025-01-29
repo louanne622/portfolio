@@ -1,0 +1,118 @@
+.contact {
+    width: 100%;
+    min-height: auto;
+    padding: 6rem 0;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.container {
+    width: 95%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #1f2937;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 3fr 2fr;
+        gap: 6rem;
+    }
+}
+
+.formContainer {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup {
+    input, textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background-color: #f9fafb;
+        transition: all 0.3s ease;
+        font-size: 0.875rem;
+
+        &:focus {
+            outline: none;
+            border-color: #6366f1;
+            background-color: white;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+.submitButton {
+    padding: 0.75rem 2rem;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+
+    &:hover {
+        background-color: #4338ca;
+        transform: translateY(-2px);
+    }
+}
+
+.contactInfo {
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 2rem;
+    }
+}
+
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4b5563;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+
+    svg {
+        font-size: 1.25rem;
+        color: #6366f1;
+    }
+
+    &:hover {
+        color: #1f2937;
+        transform: translateX(4px);
+    }
+} 

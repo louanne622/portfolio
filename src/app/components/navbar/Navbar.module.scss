@@ -1,0 +1,82 @@
+.navbar {
+    @apply fixed top-0 left-0 right-0 z-50
+    bg-white/80 backdrop-blur-sm
+    border-b border-gray-200;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+    h-16 flex items-center justify-between;
+}
+
+.logo {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-weight: bold;
+    background: linear-gradient(to right, #fbb6ce, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #4B5563;
+    }
+}
+
+.nav {
+    @apply hidden md:flex items-center space-x-8;
+}
+
+.mobileNav {
+    @apply fixed md:hidden
+    top-16 left-0 right-0
+    bg-white/95 backdrop-blur-sm
+    border-b border-gray-200
+    py-4 px-4
+    flex flex-col space-y-4;
+}
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #4B5563;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #111827;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.brand {
+    @apply text-base font-bold text-gray-900
+    hover:text-gray-600 transition-colors duration-300;
+}
+
+.links {
+    @apply flex items-center gap-6;
+}
+
+.link {
+    @apply text-gray-600 hover:text-gray-900
+    text-sm sm:text-base
+    transition-colors duration-200;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

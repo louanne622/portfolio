@@ -1,0 +1,56 @@
+.flower {
+    position: relative; /* Positionnement des pétales et du centre */
+    width: 200px; /* Largeur totale de la fleur */
+    height: 200px; /* Hauteur totale de la fleur */
+    animation : rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.petal {
+    position: absolute;
+    width: 100px; /* Largeur d'un pétale */
+    height: 100px; /* Hauteur d'un pétale */
+    border-radius: 50%; /* Forme ovale */
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform-origin: 50% 100%; /* Pivot du pétale au centre-bas */
+}
+
+.petal:nth-child(1) {
+    transform: translate(-50%, -100%) rotate(0deg); /* Haut */
+}
+
+.petal:nth-child(2) {
+    transform: translate(-50%, -100%) rotate(72deg); /* Haut-droite */
+}
+
+.petal:nth-child(3) {
+    transform: translate(-50%, -100%) rotate(144deg); /* Bas-droite */
+}
+
+.petal:nth-child(4) {
+    transform: translate(-50%, -100%) rotate(216deg); /* Bas-gauche */
+}
+
+.petal:nth-child(5) {
+    transform: translate(-50%, -100%) rotate(288deg); /* Haut-gauche */
+}
+
+.center {
+    position: absolute;
+    width: 80px; /* Taille du centre */
+    height: 80px; /* Taille du centre */
+    background-color: yellow; /* Couleur du centre */
+    border-radius: 50%; /* Forme circulaire */
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%); /* Parfaitement centré */
+}

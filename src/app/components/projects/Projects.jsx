@@ -14,7 +14,7 @@ const professionalProjects = [
     {
         title: "Les Blongios",
         description: "Refonte complète du site web de l'association Les Blongios avec une architecture moderne.",
-        image: "/img/blongios-2.png",
+        image: "/portfolio/img/blongios-2.png",
         github: "https://github.com/louangr/blongios-website",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -31,7 +31,7 @@ const personalProjects = [
     {
         title: "Portfolio",
         description: "Portfolio personnel présentant mes compétences et projets, avec un design moderne et responsive.",
-        image: "/img/portfolio.png",
+        image: "/portfolio/img/portfolio.png",
         github: "https://github.com/louangr/portfolio",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -39,7 +39,7 @@ const personalProjects = [
     {
         title: "Minecraft Enhancement Mod",
         description: "Mod Minecraft ajoutant de nouvelles fonctionnalités de gameplay et d'interface utilisateur pour améliorer l'expérience de jeu.",
-        image: "/img/mod-minecraft.jpg",
+        image: "/portfolio/img/mod-minecraft.jpg",
         github: "https://github.com/louangr/minecraft-mod",
         icons: [DiJava, TbBrandMinecraft, SiCurseforge],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"

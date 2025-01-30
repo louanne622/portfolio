@@ -59,6 +59,7 @@ const About = () => {
                                     <FaUserTie className={styles.icon} />
                                     <h4>Experience</h4>
                                     <p>2+ years in development</p>
+                                    
                                 </div>
                             </div>
                         </FadeIn>

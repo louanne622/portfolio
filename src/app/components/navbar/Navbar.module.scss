@@ -1,12 +1,30 @@
 .navbar {
-    @apply fixed top-0 left-0 right-0 z-50
-    bg-white/80 backdrop-blur-sm
-    border-b border-gray-200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
-    h-16 flex items-center justify-between;
+    max-width: 80rem; // 7xl equivalent
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 640px) {
+        padding: 0 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 0 2rem;
+    }
 }
 
 .logo {
@@ -25,16 +43,31 @@
 }
 
 .nav {
-    @apply hidden md:flex items-center space-x-8;
+    display: none;
+    
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
 }
 
 .mobileNav {
-    @apply fixed md:hidden
-    top-16 left-0 right-0
-    bg-white/95 backdrop-blur-sm
-    border-b border-gray-200
-    py-4 px-4
-    flex flex-col space-y-4;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
 
 .hamburger {
@@ -56,18 +89,34 @@
 }
 
 .brand {
-    @apply text-base font-bold text-gray-900
-    hover:text-gray-600 transition-colors duration-300;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111827;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #4B5563;
+    }
 }
 
 .links {
-    @apply flex items-center gap-6;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .link {
-    @apply text-gray-600 hover:text-gray-900
-    text-sm sm:text-base
-    transition-colors duration-200;
+    color: #4B5563;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+
+    @media (min-width: 640px) {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        color: #111827;
+    }
 }
 
 @keyframes slideIn {

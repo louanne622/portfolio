@@ -5,11 +5,6 @@ const nextConfig = {
         unoptimized: true,
     },
     basePath: '/portfolio',
-    experimental: {
-        turbotrace: {
-            logLevel: 'error'
-        }
     }
-}
 
 module.exports = nextConfig

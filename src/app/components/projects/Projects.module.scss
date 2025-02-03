@@ -313,6 +313,10 @@
     }
 }
 
+.noImage {
+    padding-top: 2rem;
+}
+
 @media (max-width: 768px) {
     .projectsGrid {
         grid-template-columns: 1fr;

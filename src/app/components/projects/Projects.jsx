@@ -70,7 +70,7 @@ const ProjectCard = ({ project }) => {
                         />
                     </div>
                 )}
-                <div className={styles.content}>
+                <div className={`${styles.content} ${!project.image ? styles.noImage : ''}`}>
                     <div className={styles.header}>
                         <h3 className={styles.title}>{project.title}</h3>
                         <div className={styles.icons}>
@@ -107,22 +107,7 @@ const ProjectCard = ({ project }) => {
 
 const ProjectSection = ({ title, projects }) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [projectsPerPage, setProjectsPerPage] = useState(2);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setProjectsPerPage(window.innerWidth >= 768 ? 2 : 1);
-        };
-
-        // Set initial value
-        handleResize();
-
-        // Add event listener
-        window.addEventListener('resize', handleResize);
-
-        // Cleanup
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const projectsPerPage = 3; // Changé à 3 projets par page
 
     const totalPages = Math.ceil(projects.length / projectsPerPage);
 
@@ -140,7 +125,8 @@ const ProjectSection = ({ title, projects }) => {
                 ))}
             </div>
 
-            {totalPages > 1 && (
+            {/* Afficher la pagination seulement si on a plus de 3 projets */}
+            {projects.length > projectsPerPage && (
                 <div className={styles.pagination}>
                     <button 
                         onClick={() => setCurrentPage(prev => prev - 1)}

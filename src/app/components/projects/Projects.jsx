@@ -4,7 +4,9 @@ import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.scss';
 import Image from 'next/image';
 import { SiGithub, SiReact, SiNextdotjs, SiTailwindcss,
-         SiPython, SiSelenium, SiCurseforge } from 'react-icons/si';
+         SiPython, SiSelenium, SiCurseforge, 
+         SiOpencv,
+         SiMediapipe} from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 import { TbBrandMinecraft } from 'react-icons/tb';
 import { FaChevronLeft, FaChevronRight, FaRobot, FaGamepad } from 'react-icons/fa';
@@ -42,6 +44,14 @@ const personalProjects = [
         image: "/portfolio/img/mod-minecraft.jpg",
         github: "https://github.com/louangr/minecraft-mod",
         icons: [DiJava, TbBrandMinecraft, SiCurseforge],
+        demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
+    },
+    {
+        title: "Computer Vision",
+        description: "Apprendre à utiliser openvc et mediapipe",
+        image: "/portfolio/img/mod-minecraft.jpg",
+        github: "https://github.com/louangr/minecraft-mod",
+        icons: [SiPython, SiOpencv, SiMediapipe],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
     }
 ];

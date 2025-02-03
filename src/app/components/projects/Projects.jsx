@@ -31,14 +31,6 @@ const professionalProjects = [
 
 const personalProjects = [
     {
-        title: "Portfolio",
-        description: "Portfolio personnel présentant mes compétences et projets, avec un design moderne et responsive.",
-        image: "/portfolio/img/portfolio.png",
-        github: "https://github.com/louangr/portfolio",
-        demo: "https://www.lesblongios.fr",
-        icons: [SiReact, SiNextdotjs, SiTailwindcss]
-    },
-    {
         title: "Minecraft Enhancement Mod",
         description: "Mod Minecraft ajoutant de nouvelles fonctionnalités de gameplay et d'interface utilisateur pour améliorer l'expérience de jeu.",
         image: "/portfolio/img/mod-minecraft.jpg",

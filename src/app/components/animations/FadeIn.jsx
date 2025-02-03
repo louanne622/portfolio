@@ -31,6 +31,7 @@ const FadeIn = ({ children, direction = 'up', delay = 0, className = '' }) => {
         >
             {children}
         </motion.div>
+        
     );
 };
 

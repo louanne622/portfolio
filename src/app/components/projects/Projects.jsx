@@ -49,7 +49,6 @@ const personalProjects = [
     {
         title: "Computer Vision",
         description: "Apprendre à utiliser openvc et mediapipe",
-        image: "/portfolio/img/mod-minecraft.jpg",
         github: "https://github.com/louangr/minecraft-mod",
         icons: [SiPython, SiOpencv, SiMediapipe],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"

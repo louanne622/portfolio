@@ -31,6 +31,14 @@ const professionalProjects = [
 
 const personalProjects = [
     {
+        title: "Portfolio",
+        description: "Portfolio personnel présentant mes compétences et projets, avec un design moderne et responsive.",
+        image: "/portfolio/img/portfolio.png",
+        github: "https://github.com/louangr/portfolio",
+        demo: "https://www.lesblongios.fr",
+        icons: [SiReact, SiNextdotjs, SiTailwindcss]
+    },
+    {
         title: "Minecraft Enhancement Mod",
         description: "Mod Minecraft ajoutant de nouvelles fonctionnalités de gameplay et d'interface utilisateur pour améliorer l'expérience de jeu.",
         image: "/portfolio/img/mod-minecraft.jpg",
@@ -99,29 +107,33 @@ const ProjectCard = ({ project }) => {
 
 const ProjectSection = ({ title, projects }) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const projectsPerPage = 3; // Changé à 3 projets par page
+    const projectsPerPage = 3;
 
     const totalPages = Math.ceil(projects.length / projectsPerPage);
-
+    
     const getCurrentProjects = () => {
         const startIndex = currentPage * projectsPerPage;
         return projects.slice(startIndex, startIndex + projectsPerPage);
     };
+
+    // Réinitialiser la page quand les projets changent
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [projects]);
 
     return (
         <div className={styles.section}>
             <h3 className={styles.sectionTitle}>{title}</h3>
             <div className={styles.projectsGrid}>
                 {getCurrentProjects().map((project, index) => (
-                    <ProjectCard key={index} project={project} />
+                    <ProjectCard key={project.title + index} project={project} />
                 ))}
             </div>
 
-            {/* Afficher la pagination seulement si on a plus de 3 projets */}
-            {projects.length > projectsPerPage && (
+            {projects.length > 3 && (
                 <div className={styles.pagination}>
                     <button 
-                        onClick={() => setCurrentPage(prev => prev - 1)}
+                        onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
                         disabled={currentPage === 0}
                         className={styles.paginationButton}
                     >
@@ -137,7 +149,7 @@ const ProjectSection = ({ title, projects }) => {
                         </button>
                     ))}
                     <button 
-                        onClick={() => setCurrentPage(prev => prev + 1)}
+                        onClick={() => setCurrentPage(prev => Math.min(totalPages - 1, prev + 1))}
                         disabled={currentPage === totalPages - 1}
                         className={styles.paginationButton}
                     >

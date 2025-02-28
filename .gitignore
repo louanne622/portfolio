@@ -5,7 +5,12 @@
 /.pnp
 .pnp.js
 package-lock.json
-sonar-project.properties
+/scannerwork
+.sonar
+.sonarqube
+coverage/
+report-task.txt
+sonar-scanner.log
 
 # testing
 /coverage

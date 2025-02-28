@@ -8,7 +8,8 @@ import { SiGithub, SiReact, SiNextdotjs, SiTailwindcss,
          SiOpencv} from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 import { TbBrandMinecraft } from 'react-icons/tb';
-import { FaChevronLeft, FaChevronRight, FaRobot, FaGamepad } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaRobot, FaGamepad, FaDiscord } from 'react-icons/fa';
+import { TiWeatherCloudy } from 'react-icons/ti'
 import FadeIn from '../animations/FadeIn';
 
 const professionalProjects = [
@@ -51,6 +52,14 @@ const personalProjects = [
         github: "https://github.com/louangr/minecraft-mod",
         icons: [SiPython, SiOpencv],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
+    },
+    {
+        title: "Bot discord",
+        description: "Bot discord Toobo le singe",
+        image: "",
+        github: "https://github.com/louangr/minecraft-mod",
+        icons: [FaDiscord, TiWeatherCloudy],
+        demo: "lien pour ajouter le bot"
     }
 ];
 

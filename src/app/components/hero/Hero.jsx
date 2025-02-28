@@ -14,7 +14,7 @@ const Hero = () => {
                 <FadeIn direction="right">
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/portfolio/img/image.png"
+                            src="/img/image.png"
                             alt="Lou-Anne profile picture"
                             width={400}
                             height={400}

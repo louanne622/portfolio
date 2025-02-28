@@ -5,8 +5,7 @@ import styles from './Projects.module.scss';
 import Image from 'next/image';
 import { SiGithub, SiReact, SiNextdotjs, SiTailwindcss,
          SiPython, SiSelenium, SiCurseforge, 
-         SiOpencv,
-         SiMediapipe} from 'react-icons/si';
+         SiOpencv} from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 import { TbBrandMinecraft } from 'react-icons/tb';
 import { FaChevronLeft, FaChevronRight, FaRobot, FaGamepad } from 'react-icons/fa';
@@ -16,7 +15,7 @@ const professionalProjects = [
     {
         title: "Les Blongios",
         description: "Refonte complète du site web de l'association Les Blongios avec une architecture moderne.",
-        image: "/portfolio/img/blongios-2.png",
+        image: "/img/blongios-2.png",
         github: "https://github.com/louangr/blongios-website",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -33,7 +32,7 @@ const personalProjects = [
     {
         title: "Portfolio",
         description: "Portfolio personnel présentant mes compétences et projets, avec un design moderne et responsive.",
-        image: "/portfolio/img/portfolio.png",
+        image: "/img/portfolio.png",
         github: "https://github.com/louangr/portfolio",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -50,7 +49,7 @@ const personalProjects = [
         title: "Computer Vision",
         description: "Apprendre à utiliser openvc et mediapipe",
         github: "https://github.com/louangr/minecraft-mod",
-        icons: [SiPython, SiOpencv, SiMediapipe],
+        icons: [SiPython, SiOpencv],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
     }
 ];

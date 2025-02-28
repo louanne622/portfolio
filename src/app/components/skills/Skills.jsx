@@ -17,7 +17,6 @@ import {
 import { DiJava, DiVisualstudio } from 'react-icons/di';
 import { GiSpring } from 'react-icons/gi';
 import { BiLogoSpringBoot } from 'react-icons/bi';
-import FadeIn from '../animations/FadeIn';
 import { 
     FaUserFriends, 
     FaLightbulb, 

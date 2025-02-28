@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './Footer.module.scss';
-import { FaGithub, FaLinkedin, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();

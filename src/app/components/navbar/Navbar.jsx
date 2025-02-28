@@ -7,11 +7,6 @@ import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navigation = [
-        { name: 'Accueil', href: '/portfolio/' },
-        { name: 'À propos', href: '/portfolio/#about' },
-        // ...
-    ];
 
     return (
         <nav className={styles.navbar}>

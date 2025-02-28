@@ -1,9 +1,8 @@
 'use client';  // Ajout de cette directive pour utiliser les hooks dans Next.js
 
-import React from 'react';
 import Flower from './flower/Flower';
 import styles from './background.module.scss';
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 
 const Background = () => {
     const [offset, setOffset] = useState({ x: 0, y: 0 });

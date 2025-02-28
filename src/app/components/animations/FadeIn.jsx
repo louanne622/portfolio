@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 
+
 const FadeIn = ({ children, direction = 'up', delay = 0, className = '' }) => {
     const directions = {
         up: { y: 40 },

@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import styles from './Skills.module.scss';
-import SkillSection from './SkillSection';
 import { 
     SiReact, SiNextdotjs, SiTailwindcss, SiJavascript, SiTypescript,
     SiNodedotjs, SiPostgresql,
@@ -19,7 +18,6 @@ import { DiJava, DiVisualstudio } from 'react-icons/di';
 import { GiSpring } from 'react-icons/gi';
 import { BiLogoSpringBoot } from 'react-icons/bi';
 import FadeIn from '../animations/FadeIn';
-import { TbBrandChatgpt } from 'react-icons/tb';
 import { 
     FaUserFriends, 
     FaLightbulb, 
@@ -150,16 +148,6 @@ const SKILLS_ARRAY = [
         ]
     }
 ];
-
-const SkillCard = ({ skill, delay = 0 }) => {
-    return (
-        <FadeIn delay={delay}>
-            <div className={styles.skillCard}>
-                {/* ... */}
-            </div>
-        </FadeIn>
-    );
-};
 
 const Skills = () => {
     const [currentSection, setCurrentSection] = useState(0);

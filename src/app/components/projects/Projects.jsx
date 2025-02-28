@@ -4,7 +4,9 @@ import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.scss';
 import Image from 'next/image';
 import { SiGithub, SiReact, SiNextdotjs, SiTailwindcss,
-         SiPython, SiSelenium, SiCurseforge } from 'react-icons/si';
+         SiPython, SiSelenium, SiCurseforge, 
+         SiOpencv,
+         SiMediapipe} from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 import { TbBrandMinecraft } from 'react-icons/tb';
 import { FaChevronLeft, FaChevronRight, FaRobot, FaGamepad } from 'react-icons/fa';
@@ -14,7 +16,7 @@ const professionalProjects = [
     {
         title: "Les Blongios",
         description: "Refonte complète du site web de l'association Les Blongios avec une architecture moderne.",
-        image: "/img/blongios-2.png",
+        image: "/portfolio/img/blongios-2.png",
         github: "https://github.com/louangr/blongios-website",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -31,7 +33,7 @@ const personalProjects = [
     {
         title: "Portfolio",
         description: "Portfolio personnel présentant mes compétences et projets, avec un design moderne et responsive.",
-        image: "/img/portfolio.png",
+        image: "/portfolio/img/portfolio.png",
         github: "https://github.com/louangr/portfolio",
         demo: "https://www.lesblongios.fr",
         icons: [SiReact, SiNextdotjs, SiTailwindcss]
@@ -39,9 +41,16 @@ const personalProjects = [
     {
         title: "Minecraft Enhancement Mod",
         description: "Mod Minecraft ajoutant de nouvelles fonctionnalités de gameplay et d'interface utilisateur pour améliorer l'expérience de jeu.",
-        image: "/img/mod-minecraft.jpg",
+        image: "/portfolio/img/mod-minecraft.jpg",
         github: "https://github.com/louangr/minecraft-mod",
         icons: [DiJava, TbBrandMinecraft, SiCurseforge],
+        demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
+    },
+    {
+        title: "Computer Vision",
+        description: "Apprendre à utiliser openvc et mediapipe",
+        github: "https://github.com/louangr/minecraft-mod",
+        icons: [SiPython, SiOpencv, SiMediapipe],
         demo: "https://www.curseforge.com/minecraft/mc-mods/your-mod"
     }
 ];
@@ -61,7 +70,7 @@ const ProjectCard = ({ project }) => {
                         />
                     </div>
                 )}
-                <div className={styles.content}>
+                <div className={`${styles.content} ${!project.image ? styles.noImage : ''}`}>
                     <div className={styles.header}>
                         <h3 className={styles.title}>{project.title}</h3>
                         <div className={styles.icons}>
@@ -98,43 +107,33 @@ const ProjectCard = ({ project }) => {
 
 const ProjectSection = ({ title, projects }) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [projectsPerPage, setProjectsPerPage] = useState(2);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setProjectsPerPage(window.innerWidth >= 768 ? 2 : 1);
-        };
-
-        // Set initial value
-        handleResize();
-
-        // Add event listener
-        window.addEventListener('resize', handleResize);
-
-        // Cleanup
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const projectsPerPage = 3;
 
     const totalPages = Math.ceil(projects.length / projectsPerPage);
-
+    
     const getCurrentProjects = () => {
         const startIndex = currentPage * projectsPerPage;
         return projects.slice(startIndex, startIndex + projectsPerPage);
     };
+
+    // Réinitialiser la page quand les projets changent
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [projects]);
 
     return (
         <div className={styles.section}>
             <h3 className={styles.sectionTitle}>{title}</h3>
             <div className={styles.projectsGrid}>
                 {getCurrentProjects().map((project, index) => (
-                    <ProjectCard key={index} project={project} />
+                    <ProjectCard key={project.title + index} project={project} />
                 ))}
             </div>
 
-            {totalPages > 1 && (
+            {projects.length > 3 && (
                 <div className={styles.pagination}>
                     <button 
-                        onClick={() => setCurrentPage(prev => prev - 1)}
+                        onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
                         disabled={currentPage === 0}
                         className={styles.paginationButton}
                     >
@@ -150,7 +149,7 @@ const ProjectSection = ({ title, projects }) => {
                         </button>
                     ))}
                     <button 
-                        onClick={() => setCurrentPage(prev => prev + 1)}
+                        onClick={() => setCurrentPage(prev => Math.min(totalPages - 1, prev + 1))}
                         disabled={currentPage === totalPages - 1}
                         className={styles.paginationButton}
                     >

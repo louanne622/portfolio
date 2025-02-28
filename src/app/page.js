@@ -7,25 +7,27 @@ import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 
-const sections = [
-  { Component: Hero, className: "h-screen" },
-  { Component: About, className: "bg-white" },
-  { Component: Skills, className: "bg-white" },
-  { Component: Projects, className: "bg-white" },
-  { Component: Contact, className: "bg-white" }
-];
-
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
       <Navbar />
       <Background />
       <div className="relative z-10">
-        {sections.map(({ Component, className }, index) => (
-          <section key={index} className={`relative ${className}`}>
-            <Component />
-          </section>
-        ))}
+        <section className="h-screen relative">
+          <Hero />
+        </section>
+        <section className="bg-white relative">
+          <About />
+        </section>
+        <section className="bg-white relative">
+          <Skills />
+        </section>
+        <section className="bg-white relative">
+          <Projects />
+        </section>
+        <section className="bg-white relative">
+          <Contact />
+        </section>
         <Footer />
       </div>
     </main>

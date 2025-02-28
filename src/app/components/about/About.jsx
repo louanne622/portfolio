@@ -21,7 +21,7 @@ const About = () => {
                         <div className={styles.imageSection}>
                             <div className={styles.imageContainer}>
                                 <Image
-                                    src="/img/picture.jpg"
+                                    src="/portfolio/img/picture.jpg"
                                     alt="picture louanne"
                                     width={400}
                                     height={400}
@@ -59,6 +59,7 @@ const About = () => {
                                     <FaUserTie className={styles.icon} />
                                     <h4>Experience</h4>
                                     <p>2+ years in development</p>
+                                    
                                 </div>
                             </div>
                         </FadeIn>

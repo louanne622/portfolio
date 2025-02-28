@@ -6,6 +6,9 @@ const basePath = isProduction ? '/portfolio' : '';
 const nextConfig = {
     output: 'export',
     basePath: basePath,
+    images: {
+        unoptimized: true
+    },
     assetPrefix: basePath,
     images: {
         unoptimized: true,

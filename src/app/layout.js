@@ -1,7 +1,11 @@
-import { Inter } from 'next/font/google';
-import './globals.scss';
+import { Geist } from 'next/font/google';
+import "./styles/global.scss";
 
-const inter = Inter({ subsets: ['latin'] });
+const geist = Geist({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 
 export const metadata = {
   title: 'Lou-Anne Lecocq - Portfolio',
@@ -10,8 +14,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body className={`${geist.className} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

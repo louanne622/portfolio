@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './About.module.scss';
-import { FaGraduationCap, FaLaptopCode, FaUserTie } from 'react-icons/fa';
+import { FaGraduationCap, FaLaptopCode, FaUserTie } from 'react-icons/fa6';
 import Image from 'next/image';
 import FadeIn from '../animations/FadeIn';
 import Decorations from '../shared/Decorations';
